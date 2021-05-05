@@ -1,9 +1,10 @@
-import { Flex, Text, Input, Icon, HStack } from "@chakra-ui/react";
 import {
   RiNotificationLine,
   RiSearchLine,
   RiUserAddLine,
 } from "react-icons/ri";
+
+import { Box, Flex, HStack, Icon, Input, Text, Avatar } from "@chakra-ui/react";
 
 export function Header() {
   return (
@@ -53,10 +54,31 @@ export function Header() {
         <Icon as={RiSearchLine} fontSize="20" />
       </Flex>
       <Flex align="center" ml="auto">
-        <HStack spacing="4">
+        <HStack
+          spacing="8"
+          mx="8"
+          pr="8"
+          py="1"
+          color="gray.300"
+          borderRightWidth={1}
+          borderColor="gray.700"
+        >
           <Icon as={RiNotificationLine} fontSize="20" />
           <Icon as={RiUserAddLine} fontSize="20" />
         </HStack>
+        <Flex align="center">
+          <Box mr="4" textAlign="right">
+            <Text>Juliane Pires</Text>
+            <Text color="gray.300" fontSize="small">
+              mpiresjuliane@outlook.com
+            </Text>
+          </Box>
+          <Avatar
+            size="md"
+            name="Juliane Pires"
+            src="https://github.com/JulianePires.png"
+          />
+        </Flex>
       </Flex>
     </Flex>
   );
