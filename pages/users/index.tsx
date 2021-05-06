@@ -3,9 +3,10 @@ import { Checkbox } from "@chakra-ui/checkbox";
 import Icon from "@chakra-ui/icon";
 import { Box, Flex, Heading, Text } from "@chakra-ui/layout";
 import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/table";
-import { RiAddLine } from "react-icons/ri";
+import { RiAddLine, RiPencilLine } from "react-icons/ri";
 
 import { Header } from "../../components/Header";
+import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function UserList() {
@@ -25,7 +26,7 @@ export default function UserList() {
               size="sm"
               fontSize="sm"
               colorScheme="purple"
-              leftIcon={<Icon as={RiAddLine} />}
+              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
             >
               Criar novo
             </Button>
@@ -39,6 +40,7 @@ export default function UserList() {
                 </Th>
                 <Th>Usuário</Th>
                 <Th>Data de cadastro</Th>
+                <Th width="8"></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -55,9 +57,23 @@ export default function UserList() {
                   </Box>
                 </Td>
                 <Td>04 de Abril, 2021</Td>
+                <Td>
+                  <Button
+                    as="a"
+                    size="sm"
+                    fontSize="sm"
+                    colorScheme="purple"
+                    variant="ghost"
+                    leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                  >
+                    Editar
+                  </Button>
+                </Td>
               </Tr>
             </Tbody>
           </Table>
+
+          <Pagination />
         </Box>
       </Flex>
     </Box>
